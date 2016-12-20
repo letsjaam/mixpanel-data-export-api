@@ -62,7 +62,7 @@ try {
 }
 ```
 
-#### Silex Integration
+## Silex Integration
 A small integration with [Silex](http://silex.sensiolabs.org/) is provided via `Jaam\Mixpanel\Integration\Silex\MixpanelDataExportProvider`.
 
 ```php

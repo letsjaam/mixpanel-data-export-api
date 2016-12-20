@@ -10,10 +10,23 @@ class DataExportApi {
 
     private $secret;
 
+    /**
+     * Constructor
+     *
+     * @param string $secret Mixpanel Project API secret
+     */
     public function __construct($secret) {
         $this->secret = $secret;
     }
 
+    /**
+     * Handles API requests.
+     *
+     * @param  string $baseUrl  Base URL for request
+     * @param  string $endpoint Endpoint to be called
+     * @param  array  $params   Parameter array for request
+     * @return string           Raw response returned by request
+     */
     private function request($baseUrl, $endpoint, array $params = []) {
         // JSON encode array parameters
         $params = array_map(function($value) {
@@ -44,6 +57,13 @@ class DataExportApi {
         return $response;
     }
 
+    /**
+     * Call a data endpoint on the API.
+     *
+     * @param  string $endpoint Endpoint to be called, eg. "events"
+     * @param  array  $params   Parameter array for request
+     * @return json             Result JSON
+     */
     public function data($endpoint, array $params) {
         // Set JSON format
         $params['format'] = 'json';
@@ -59,6 +79,12 @@ class DataExportApi {
         return $json;
     }
 
+    /**
+     * Call the raw export endpoint on the API.
+     *
+     * @param  array $params Parameter array for request
+     * @return array         Result array
+     */
     public function export(array $params = []) {
         // Execute request
         $response = $this->request(self::API_EXPORT_URL, 'export', $params);
