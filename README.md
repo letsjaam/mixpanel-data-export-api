@@ -7,7 +7,7 @@ composer require jaam/mixpanel-data-export-api
 ```
 
 ## Usage
-The `DataApiExport` class includes two public methods - `data` and `export` - one for each of the Data Export APIs.
+The `Jaam\Mixpanel\DataExportApi` class includes two public methods - `data` and `export` - one for each of the Data Export APIs.
 
 Full documentation of every endpoint, their parameters and responses can be found in the [Mixpanel Data Export API documentation](https://mixpanel.com/help/reference/data-export-api).
 
@@ -23,7 +23,7 @@ use Jaam\Mixpanel\DataExportApiException;
 $mixpanel = new DataExportApi('YOUR SECRET'); // Secret located in Mixpanel project settings
 ```
 
-#### Data
+#### Data API
 See [Data Export API documentation](https://mixpanel.com/help/reference/data-export-api) for methods, parameters and response examples.
 
 ```php
@@ -44,7 +44,7 @@ try {
 }
 ```
 
-#### Export
+#### Export API
 See [Exporting Raw Data documentation](https://mixpanel.com/help/reference/exporting-raw-data) for parameters and response examples.
 
 ```php
