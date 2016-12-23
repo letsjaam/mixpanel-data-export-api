@@ -1,6 +1,8 @@
 # Mixpanel Data Export API
 This library wraps the [Mixpanel Data Export API](https://mixpanel.com/help/reference/data-export-api) for PHP.
 
+To track events and update profiles please see the official [Mixpanel PHP Library](https://github.com/mixpanel/mixpanel-php).
+
 ## Installation
 ```bash
 composer require jaam/mixpanel-data-export-api
