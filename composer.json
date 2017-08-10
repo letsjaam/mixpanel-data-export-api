@@ -15,12 +15,19 @@
         "php": ">=5.4.0"
     },
     "require-dev": {
-        "silex/silex": "^2.0"
+        "silex/silex": "^2.0",
+        "phpunit/phpunit": "^6.2",
+        "vlucas/phpdotenv": "^2.4"
     },
     "suggest": {
         "silex/silex": "for the integration with your Silex application"
     },
-    "autoload":     {
-        "psr-4": { "Jaam\\Mixpanel\\": "src" }
+    "autoload": {
+        "psr-4": {
+            "Jaam\\Mixpanel\\": "src"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit"
     }
 }
