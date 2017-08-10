@@ -72,7 +72,7 @@ class DataExportApi {
         $response = $this->request(self::API_URL, $endpoint, $params);
         $json = json_decode($response, true);
 
-        if ( isset($json['error']) ) {
+        if ( isset($json['error']) && $json['error'] !== false ) {
             throw new DataExportApiException($json['error']);
         }
 
@@ -97,7 +97,7 @@ class DataExportApi {
             return json_decode($line, true);
         }, $lines);
 
-        if ( isset($json[0]) && isset($json[0]['error']) ) {
+        if ( isset($json[0]) && isset($json[0]['error']) && $json[0]['error'] !== false ) {
             throw new DataExportApiException($json[0]['error']);
         }
 
