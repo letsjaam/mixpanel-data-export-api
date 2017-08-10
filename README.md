@@ -33,7 +33,7 @@ See [Data Export API documentation](https://mixpanel.com/help/reference/data-exp
 try {
     // Retrieve events from `events` endpoint
     $data = $mixpanel->data('events', [
-        'events' => ['event_name'], // Array of event names
+        'event' => ['event_name'], // Array of event names
         'type' => 'unique',
         'unit' => 'day',
         'from_date' => '2016-12-01',
