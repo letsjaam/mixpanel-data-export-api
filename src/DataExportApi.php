@@ -94,12 +94,14 @@ class DataExportApi {
 
         // Convert lines to JSON
         $json = array_map(function($line) {
-            return json_decode($line, true);
-        }, $lines);
+            $decodedLine = json_decode($line, true);
 
-        if ( isset($json[0]) && isset($json[0]['error']) && $json[0]['error'] !== false ) {
-            throw new DataExportApiException($json[0]['error']);
-        }
+            if ( json_last_error() !== JSON_ERROR_NONE ) {
+                throw new DataExportApiException($line);
+            }
+
+            return $decodedLine;
+        }, $lines);
 
         return $json;
     }
