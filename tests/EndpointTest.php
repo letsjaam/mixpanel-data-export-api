@@ -31,6 +31,7 @@ class EndpointTest extends BaseTest {
 
     public function testInvalidEndpoint() {
         $this->expectException(DataExportApiException::class);
+
         $data = $this->mixpanel->data('fake_endpoint', []);
     }
 
